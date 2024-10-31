@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { Link } from "react-router-dom";
 
-// import flag from "../assets/Images/Nigflag.png"
+import Nigflag from "/Nigflag.png"
 
 import { IoReorderTwoSharp } from "react-icons/io5";
 
@@ -17,19 +17,19 @@ const Header = () => {
               
             </Logo>
             <Navigations>
-                <Link to= "/">
+                <Link to= "/" className="nav-link">
                     <nav>
                     <span>Personal</span>
                     <IoMdArrowDropdown size={20} />
                     </nav>
                 </Link>
-                <Link to= "/business">  
+                <Link to= "/business" className="nav-link">  
                     <nav>
                     <span>Business</span>
                     <IoMdArrowDropdown size={20}/>
                     </nav>
                 </Link> 
-                <Link to= "/companies">    
+                <Link to= "/companies" className="nav-link">    
                     <nav>
                     <span>Company</span>
                     <IoMdArrowDropdown size={20} />
@@ -46,7 +46,7 @@ const Header = () => {
             <SignBtn> <button>Sign In</button></SignBtn>
             </Link>
             <JoinBtn> <button>Join Kuda </button></JoinBtn>
-            <ContBtn> <img src="/Nigflag.png" alt="" /> </ContBtn>
+            <ContBtn> <img src= {Nigflag} alt="" /> </ContBtn>
             <SideNav>
                 <IoReorderTwoSharp />
             </SideNav>
@@ -72,14 +72,26 @@ margin-left:50px;
 gap: 100px;
 
 `
+const Logo = styled.div`
+margin-right: 0px 80px 0px 50px;
+    img{
+        width:100px;
+    }
+    display:flex;
+    color: rgb(64, 25, 109);
+    font-weight:bold;
+    
+`
+
 const Navigations = styled.div`
 display: flex;
 
 nav{
     display: flex;
     align-items: center;
-    color: #40196D;
+    color: rgb(64, 25, 109);
     margin: 0px 15px;
+    text-decoration:none;
     
 
     span{
@@ -93,16 +105,7 @@ nav{
 }
 `
 
-const Logo = styled.div`
-margin-right: 0px 80px 0px 50px;
-    img{
-        width:40px;
-    }
-    display:flex;
-    color: #40196D;
-    font-weight:bold;
-    
-`
+
 const Buttons = styled.div`
 display: flex;
 gap: 20px;
@@ -116,8 +119,9 @@ button{
     background-color:transparent;
     border: none;
     font-size: 12px;
-    font-weight: 600;
-    color: #40196D;
+    font-weight: 700;
+    font-family:mulish;
+    color: rgb(64, 25, 109);
 }
 @media (max-width: 800px){
     display: none;
@@ -125,12 +129,12 @@ button{
 `
 const JoinBtn = styled.div`
 button{
-    width: 140px;
+    width: 120px;
     height:50px;
-    background-color: #540354;
+    background-color: rgb(64, 25, 109);
     border: none;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 700;
     color: white;
     border-radius: 10px;
     padding: 5px;
@@ -142,11 +146,15 @@ button{
 }
 `
 const ContBtn = styled.div`
-margin-right: 60px;
+margin-right: 70px;
+width: 32px;
+height: 34px;
+background-color:#A4CCB7;
+border-radius: 50%;
 img{
-    width: 40px;
-    border-radius: 50%
-
+    width: 20px;
+    height: 30px;
+    margin: 1px 0px 0px 6px;
 }
 `
 const SideNav = styled.div`
